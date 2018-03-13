@@ -24,7 +24,6 @@ namespace Assets.Scripts.Player
             var p1 = transform.position + charContr.center + Vector3.up * -charContr.height * 0.5F;
             var p2 = p1 + Vector3.up * charContr.height;
 
-            // Cast character controller shape 10 meters forward to see if it is about to hit anything.
             if (Physics.CapsuleCast(p1, p2,
                 charContr.radius,
                 transform.forward,
@@ -35,36 +34,37 @@ namespace Assets.Scripts.Player
                 colliderGameObject = hit.collider.gameObject;
             }
 
-            //var rayPosition = transform.forward + transform.position;
-            //rayPosition.y -= 1;
-            //Debug.DrawRay(rayPosition, transform.up * RayDistance, Color.green);
-
-            //Debug.DrawRay(transform.position, transform.forward * RayDistance, Color.green);
-
-            //if (Physics.Raycast(transform.position, transform.forward * RayDistance,
-            //    out hit, RayDistance, LayerMask.GetMask("RayReceiver")))
-            //{
-            //    colliderGameObject = hit.collider.gameObject;
-            //}
-
             if (Input.GetButtonDown("Action"))
             {
                 if (_takenObject != null)
                 {
-                    Debug.Log("Drop : " + _takenObject.name);
-                    _takenObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    _takenObject.transform.parent = _interactive.transform;
-                    _takenObject = null;
+                    Drop();
                 }
                 else if (colliderGameObject != null &&
                          colliderGameObject.tag == "Catchable")
                 {
-                    colliderGameObject.transform.parent = this.transform;
-                    colliderGameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-                    _takenObject = colliderGameObject;
-                    Debug.Log("Take : " + _takenObject.name);
+                    Catch(colliderGameObject);
                 }
             }
+        }
+
+        private void Drop()
+        {
+            Debug.Log("Drop : " + _takenObject.name);
+            _takenObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            _takenObject.transform.parent = _interactive.transform;
+            _takenObject = null;
+        }
+
+        private void Catch(GameObject obj)
+        {
+            obj.transform.parent = this.transform;
+            obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            var position = transform.forward + transform.position;
+            obj.transform.rotation = new Quaternion();
+            obj.transform.position = position;
+            _takenObject = obj;
+            Debug.Log("Take : " + _takenObject.name);
         }
     }
 }
