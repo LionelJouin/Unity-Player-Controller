@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
@@ -7,6 +8,9 @@ namespace Assets.Scripts.Player
         public float Speed;
         public float DashSpeed;
         public int DashTime;
+        public float AnimationTolerance = 0.1f;
+
+        public bool IsMoving = false;
 
         private CharacterController _characterController;
         private int _currentDashTime;
@@ -21,8 +25,12 @@ namespace Assets.Scripts.Player
 
         private void FixedUpdate()
         {
-            var moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            var axisHorizontal = Input.GetAxis("Horizontal");
+            var axisVertical = Input.GetAxis("Vertical");
+            var moveDirection = new Vector3(axisHorizontal, 0, axisVertical);
             var speed = Speed;
+
+            IsMoving = axisVertical > AnimationTolerance || Math.Abs(axisHorizontal) > AnimationTolerance;
 
             if (!_characterController.isGrounded)
                 transform.position = new Vector3(
@@ -46,7 +54,7 @@ namespace Assets.Scripts.Player
             }
 
             _characterController.Move(moveDirection * Time.deltaTime * speed);
-
         }
+
     }
 }

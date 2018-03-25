@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: cd1170f64ae6ff148825d1e8f7f8021a
+timeCreated: 1521937797
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Apron
+    100002: Apron-String
+    100004: Body
+    100006: Chef_Hat
+    100008: //RootNode
+    100010: Eye
+    100012: Eye2
+    100014: Eyebrow
+    100016: Eyebrow2
+    100018: Hand
+    100020: Hand2
+    100022: Head
+    100024: Nose
+    400000: Apron
+    400002: Apron-String
+    400004: Body
+    400006: Chef_Hat
+    400008: //RootNode
+    400010: Eye
+    400012: Eye2
+    400014: Eyebrow
+    400016: Eyebrow2
+    400018: Hand
+    400020: Hand2
+    400022: Head
+    400024: Nose
+    2100000: Material
+    2100002: Material_010
+    2100004: Material_001
+    2100006: Material_007
+    2100008: Material_008
+    2100010: Material_006
+    2100012: Material_002
+    2100014: Material_005
+    2100016: Material_004
+    2100018: Material_003
+    2300000: Apron
+    2300002: Apron-String
+    2300004: Body
+    2300006: Chef_Hat
+    2300008: Eye
+    2300010: Eye2
+    2300012: Eyebrow
+    2300014: Eyebrow2
+    2300016: Hand
+    2300018: Hand2
+    2300020: Head
+    2300022: Nose
+    3300000: Apron
+    3300002: Apron-String
+    3300004: Body
+    3300006: Chef_Hat
+    3300008: Eye
+    3300010: Eye2
+    3300012: Eyebrow
+    3300014: Eyebrow2
+    3300016: Hand
+    3300018: Hand2
+    3300020: Head
+    3300022: Nose
+    4300000: Hand2
+    4300002: Hand
+    4300004: Eyebrow2
+    4300006: Eyebrow
+    4300008: Chef_Hat
+    4300010: Eye2
+    4300012: Eye
+    4300014: Nose
+    4300016: Head
+    4300018: Apron-String
+    4300020: Apron
+    4300022: Body
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

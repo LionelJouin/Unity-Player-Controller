@@ -6,6 +6,11 @@ namespace Assets.Scripts.Player
     {
         public float RayDistance = 1;
 
+        public bool HasObject
+        {
+            get { return _takenObject == null; }
+        }
+
         private GameObject _takenObject;
         private GameObject _interactive;
 
@@ -50,7 +55,6 @@ namespace Assets.Scripts.Player
 
         private void Drop()
         {
-            Debug.Log("Drop : " + _takenObject.name);
             _takenObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             _takenObject.transform.parent = _interactive.transform;
             _takenObject = null;
@@ -64,7 +68,6 @@ namespace Assets.Scripts.Player
             obj.transform.rotation = new Quaternion();
             obj.transform.position = position;
             _takenObject = obj;
-            Debug.Log("Take : " + _takenObject.name);
         }
     }
 }
