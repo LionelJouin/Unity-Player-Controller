@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9096a7bd41d75b84bb46db101a78bf37
-timeCreated: 1521937795
+guid: dda056034d5babb4c90e95b6818d79d8
+timeCreated: 1521994890
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -35,21 +35,11 @@ ModelImporter:
     400024: Hand_right_0
     400026: Head
     400028: Head_0
-    2100000: Material_004
-    2100002: Material_002
-    2100004: Material_003
-    2100006: Material_005
-    2100008: Material_006
-    2100010: Material_008
-    2100012: Material_007
-    2100014: Material_010
-    2100016: Material
-    2100018: Material_001
-    2100020: White
-    2100022: Skin
-    2100024: Body
-    2100026: Nose
-    2100028: Eyes
+    2100000: White
+    2100002: Skin
+    2100004: Body
+    2100006: Nose
+    2100008: Eyes
     2300000: body
     2300002: Chef_Hat
     2300004: Hand_left
@@ -67,7 +57,9 @@ ModelImporter:
     4300008: Chef_Hat
     7400000: Default Take
     7400002: Idle
-    7400004: Move
+    7400004: Idle-object
+    7400006: Move
+    7400008: Move-object
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -99,8 +91,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Default Take
       takeName: Default Take
-      firstFrame: -1
-      lastFrame: 19
+      firstFrame: 0
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -127,8 +119,36 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Idle
-      firstFrame: -1
-      lastFrame: 19
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle-object
+      takeName: Idle-object
+      firstFrame: 0
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -155,8 +175,36 @@ ModelImporter:
     - serializedVersion: 16
       name: Move
       takeName: Move
-      firstFrame: -1
-      lastFrame: 19
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Move-object
+      takeName: Move-object
+      firstFrame: 0
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

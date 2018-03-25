@@ -30,7 +30,7 @@ namespace Assets.Scripts.Player
             var moveDirection = new Vector3(axisHorizontal, 0, axisVertical);
             var speed = Speed;
 
-            IsMoving = axisVertical > AnimationTolerance || Math.Abs(axisHorizontal) > AnimationTolerance;
+            IsMoving = Math.Abs(axisVertical) > AnimationTolerance || Math.Abs(axisHorizontal) > AnimationTolerance;
 
             if (!_characterController.isGrounded)
                 transform.position = new Vector3(

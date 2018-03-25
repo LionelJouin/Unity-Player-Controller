@@ -8,7 +8,7 @@ namespace Assets.Scripts.Player
 
         public bool HasObject
         {
-            get { return _takenObject == null; }
+            get { return _takenObject != null; }
         }
 
         private GameObject _takenObject;
