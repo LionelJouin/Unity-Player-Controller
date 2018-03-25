@@ -1,32 +1,43 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Player
-{
-    public class PlayerController : MonoBehaviour
-    {
+namespace Assets.Scripts.Player {
+    public class PlayerController : MonoBehaviour {
+        private const float ROTATION_SPEED = 20f;
+
         public float Speed;
         public float DashSpeed;
         public int DashTime;
+
         public float AnimationTolerance = 0.1f;
 
         public bool IsMoving = false;
+        public int PlayerNumber;
+
 
         private CharacterController _characterController;
         private int _currentDashTime;
         private float _defaultPositionY;
+        private Joystick _joystick;
 
-        private void Start()
-        {
+        public Joystick Joystick {
+            get {
+                return _joystick;
+            }
+        }
+
+        private void Start() {
+            _joystick = new Joystick(PlayerNumber);
             _characterController = GetComponent<CharacterController>();
             _currentDashTime = DashTime;
             _defaultPositionY = transform.position.y + _characterController.skinWidth;
         }
 
+
         private void FixedUpdate()
         {
-            var axisHorizontal = Input.GetAxis("Horizontal");
-            var axisVertical = Input.GetAxis("Vertical");
+            var axisHorizontal = Input.GetAxis(_joystick.Horizontal);
+            var axisVertical = Input.GetAxis(_joystick.Vertical);
             var moveDirection = new Vector3(axisHorizontal, 0, axisVertical);
             var speed = Speed;
 
@@ -38,23 +49,20 @@ namespace Assets.Scripts.Player
                     _defaultPositionY,
                     transform.position.z);
 
-            if (moveDirection.sqrMagnitude > 0.1f)
-                transform.rotation = Quaternion.LookRotation(moveDirection);
+            if (moveDirection.sqrMagnitude > 0.05f)
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * ROTATION_SPEED);
 
-            if (Input.GetButtonDown("Dash") && _currentDashTime == DashTime)
-            {
+            if (Input.GetButtonDown(_joystick.Dash) && _currentDashTime == DashTime) {
                 _currentDashTime = 0;
-                Debug.Log("Dash");
+                Debug.Log(_joystick.Dash);
             }
 
-            if (_currentDashTime < DashTime)
-            {
+            if (_currentDashTime < DashTime) {
                 speed = DashSpeed;
                 _currentDashTime++;
             }
 
             _characterController.Move(moveDirection * Time.deltaTime * speed);
         }
-
     }
 }
