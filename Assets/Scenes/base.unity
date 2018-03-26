@@ -816,9 +816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446203b0147239b46ba7a5caae3f71a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersToFollow:
-  - {fileID: 1879872985}
+  _playersToFollow:
   - {fileID: 1019329339}
+  - {fileID: 1879872985}
 --- !u!1001 &1401797422
 Prefab:
   m_ObjectHideFlags: 0
