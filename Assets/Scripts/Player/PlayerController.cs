@@ -1,9 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Player {
-    public class PlayerController : MonoBehaviour {
-        private const float ROTATION_SPEED = 20f;
+namespace Assets.Scripts.Player
+{
+    public class PlayerController : MonoBehaviour
+    {
+        private const float RotationSpeed = 20f;
 
         public float Speed;
         public float DashSpeed;
@@ -14,20 +16,15 @@ namespace Assets.Scripts.Player {
         public bool IsMoving = false;
         public int PlayerNumber;
 
-
         private CharacterController _characterController;
         private int _currentDashTime;
         private float _defaultPositionY;
-        private Joystick _joystick;
 
-        public Joystick Joystick {
-            get {
-                return _joystick;
-            }
-        }
+        public Joystick Joystick { get; private set; }
 
-        private void Start() {
-            _joystick = new Joystick(PlayerNumber);
+        private void Start()
+        {
+            Joystick = new Joystick(PlayerNumber);
             _characterController = GetComponent<CharacterController>();
             _currentDashTime = DashTime;
             _defaultPositionY = transform.position.y + _characterController.skinWidth;
@@ -36,8 +33,8 @@ namespace Assets.Scripts.Player {
 
         private void FixedUpdate()
         {
-            var axisHorizontal = Input.GetAxis(_joystick.Horizontal);
-            var axisVertical = Input.GetAxis(_joystick.Vertical);
+            var axisHorizontal = Input.GetAxis(Joystick.Horizontal);
+            var axisVertical = Input.GetAxis(Joystick.Vertical);
             var moveDirection = new Vector3(axisHorizontal, 0, axisVertical);
             var speed = Speed;
 
@@ -50,14 +47,16 @@ namespace Assets.Scripts.Player {
                     transform.position.z);
 
             if (moveDirection.sqrMagnitude > 0.05f)
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * ROTATION_SPEED);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.deltaTime * RotationSpeed);
 
-            if (Input.GetButtonDown(_joystick.Dash) && _currentDashTime == DashTime) {
+            if (Input.GetButtonDown(Joystick.Dash) && _currentDashTime == DashTime)
+            {
                 _currentDashTime = 0;
-                Debug.Log(_joystick.Dash);
+                Debug.Log(Joystick.Dash);
             }
 
-            if (_currentDashTime < DashTime) {
+            if (_currentDashTime < DashTime)
+            {
                 speed = DashSpeed;
                 _currentDashTime++;
             }
